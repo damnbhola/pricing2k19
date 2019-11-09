@@ -1,0 +1,12 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    display: flex;
+}
+
+.logo {
+	font-weight: 400;
+	margin: 5px;
+}

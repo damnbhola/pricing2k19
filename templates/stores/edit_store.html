@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>Update Store</h1>
+</header>
+<section class="update-store-form">
+    <form method="POST">
+        <div class="form-group">
+            <label for="store_name">Store Name</label>
+            <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Flipkart" value="{{ store.name }}" />
+        </div>
+        <div class="form-group">
+            <label for="url_prefix">URL Prefix</label>
+            <input type="text" class="form-control" id="url_prefix" name="url_prefix" placeholder="https://..." value="{{ store.url_prefix }}" aria-describedby="urlPrefixHelp" />
+            <small id="urlPrefixHelp" class="form-text text-muted">
+                URL starting with?
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="tag_name">HTML tag name</label>
+            <input type="text" class="form-control" id="tag_name" name="tag_name" placeholder="span" value="{{ store.tag_name }}" aria-describedby="tagNameHelp"/>
+            <small id="tagNameHelp" class="form-text text-muted">
+                What HTML tag contains the price information at the store?
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="html_query">HTML query</label>
+            <input type="text" class="form-control" id="html_query" name="html_query" placeholder='{"class": "price"}' value="{{ store.query }}" aria-describedby="queryHelp"/>
+            <small id="queryHelp" class="form-text text-muted">
+                What query elements are there that contain the price?
+            </small>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</section>
+{% endblock %}
