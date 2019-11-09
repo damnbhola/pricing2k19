@@ -4,9 +4,7 @@ from typing import Dict
 
 
 class Database(object):
-    URI = "mongodb://127.0.0.1:27017/pricing"
-    # URI = "mongodb+srv://damanbhola:admin@pscluster-tko78.mongodb.net/test?retryWrites=true&w=majority"
-    # mongo "mongodb+srv://pscluster-tko78.mongodb.net/test"  --username damanbhola
+    URI = "mongodb+srv://damanbhola:admin@pscluster-tko78.mongodb.net/test?retryWrites=true&w=majority"
     DATABASE = pymongo.MongoClient(URI).get_database("pricing")
 
     @staticmethod
