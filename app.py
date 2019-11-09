@@ -3,7 +3,6 @@ from flask import Flask, render_template, session
 from views.alerts import alert_blueprint
 from views.stores import store_blueprint
 from views.users import user_blueprint
-from dotenv import load_dotenv
 
 app = Flask(__name__)
 # app.secret_key = "daman"
@@ -12,7 +11,6 @@ app.config.update(
     ADMIN=os.environ.get('ADMIN')
 )
 
-load_dotenv()
 
 
 @app.route('/')

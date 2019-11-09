@@ -4,7 +4,6 @@ from dataclasses import dataclass, field
 from models.item import Item
 from models.user import User
 from models.model import Model
-from libs.mailgun import Mailgun
 
 
 @dataclass(eq=False)
