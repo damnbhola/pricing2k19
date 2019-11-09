@@ -5,7 +5,7 @@ from typing import Dict
 
 
 class Database(object):
-    URI = os.environ.get("MONGO_URI")
+    URI = os.environ.get("mongodb+srv://damanbhola:admin@pscluster-tko78.mongodb.net/test?retryWrites=true&w=majority")
     DATABASE = pymongo.MongoClient(URI).get_default_database()
 
     @staticmethod
