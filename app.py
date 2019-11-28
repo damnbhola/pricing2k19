@@ -5,7 +5,6 @@ from views.stores import store_blueprint
 from views.users import user_blueprint
 
 app = Flask(__name__)
-# app.secret_key = "daman"
 app.secret_key = os.urandom(64)
 app.config.update(
     ADMIN=os.environ.get('ADMIN')
