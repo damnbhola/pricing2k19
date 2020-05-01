@@ -20,6 +20,7 @@ class Database(object):
 
     @staticmethod
     def find_one(collection: str, query: Dict) -> Dict:
+        print("yes", os.environ.get("MONGOLAB_URI"), os.environ.get("DB"))
         return Database.DATABASE[collection].find_one(query)
 
     @staticmethod
