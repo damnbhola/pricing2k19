@@ -6,9 +6,12 @@ from typing import Dict
 
 class Database(object):
     URI = os.environ.get("MONGOLAB_URI")
-    print(os.environ.get("MONGOLAB_URI"), os.environ.get("DB"))
-    client = pymongo.MongoClient(URI)
-    DATABASE = client.get_database(os.environ.get("DB"))
+    DATABASE = None
+    
+    @staticmethod
+    def initialize():
+        client = pymongo.MongoClient(Database.URI)
+        Database.DATABASE = client.get_default_database()
 
     @staticmethod
     def insert(collection: str, data: Dict) -> None:
