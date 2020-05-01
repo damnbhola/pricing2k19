@@ -15,7 +15,7 @@ class Database(object):
 
     @staticmethod
     def insert(collection: str, data: Dict) -> None:
-        Database.DATABASE[collection].insert_one(data)
+        Database.DATABASE[collection].insert(data)
 
     @staticmethod
     def find(collection: str, query: Dict) -> pymongo.cursor:
@@ -31,4 +31,4 @@ class Database(object):
 
     @staticmethod
     def remove(collection: str, query: Dict) -> Dict:
-        return Database.DATABASE[collection].remove_one(query)
+        return Database.DATABASE[collection].remove(query)
