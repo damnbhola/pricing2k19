@@ -10,6 +10,7 @@ class Database(object):
     
     @staticmethod
     def initialize():
+        print("yes", os.environ.get("MONGOLAB_URI"), os.environ.get("DB"))
         client = pymongo.MongoClient(Database.URI)
         Database.DATABASE = client.get_default_database()
 
