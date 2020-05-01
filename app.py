@@ -3,6 +3,7 @@ from flask import Flask, render_template, session
 from views.alerts import alert_blueprint
 from views.stores import store_blueprint
 from views.users import user_blueprint
+from common.database import Database
 
 app = Flask(__name__)
 app.secret_key = os.urandom(64)
