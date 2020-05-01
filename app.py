@@ -11,6 +11,11 @@ app.config.update(
 )
 
 
+@app.before_first_request
+def init_db():
+    Database.initialize()
+    
+    
 @app.route('/')
 def home():
     try:
