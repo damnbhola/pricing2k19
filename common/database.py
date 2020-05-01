@@ -1,10 +1,11 @@
 import pymongo
 import dns
+import os
 from typing import Dict
 
 
 class Database(object):
-    URI = "mongodb+srv://damanbhola:admin@pscluster-tko78.mongodb.net/test?retryWrites=true&w=majority"
+    URI = os.environ.get("MONGOLAB_URI")
     DATABASE = pymongo.MongoClient(URI).get_database()
 
     @staticmethod
