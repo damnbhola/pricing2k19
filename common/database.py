@@ -10,7 +10,6 @@ class Database(object):
     
     @staticmethod
     def initialize():
-        print("yes", os.environ.get("MONGOLAB_URI"), os.environ.get("DB"))
         client = pymongo.MongoClient(Database.URI)
         Database.DATABASE = client.get_default_database()
 
@@ -24,7 +23,6 @@ class Database(object):
 
     @staticmethod
     def find_one(collection: str, query: Dict) -> Dict:
-        print("yes", os.environ.get("MONGOLAB_URI"), os.environ.get("DB"))
         return Database.DATABASE[collection].find_one(query)
 
     @staticmethod
