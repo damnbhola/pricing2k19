@@ -6,6 +6,7 @@ from typing import Dict
 
 class Database(object):
     URI = os.environ.get("MONGOLAB_URI")
+    print(os.environ.get("MONGOLAB_URI"), os.environ.get("DB"))
     client = pymongo.MongoClient(URI)
     DATABASE = client.get_database(os.environ.get("DB"))
 
