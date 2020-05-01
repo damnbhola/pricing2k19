@@ -13,7 +13,7 @@ class Model(metaclass=ABCMeta):
         pass
 
     def save_to_mongo(self):
-        Database.update(self.collection, {"_id": self._id}, self.json())
+        Database.insert(self.collection, self.json())
 
     def remove_from_mongo(self):
         Database.remove(self.collection, {"_id": self._id})
